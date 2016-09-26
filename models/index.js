@@ -30,6 +30,7 @@ var Page = db.define('page', {
   },
   date: {
     type: Sequelize.DATE,
+    allowNull: false,
     defaultValue: Sequelize.NOW
   },
   route: {

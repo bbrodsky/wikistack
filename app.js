@@ -22,6 +22,7 @@ app.engine('html', nunjucks.render);
 // app.listen(3000);
 
 models.User.sync({}) // alternet see Ben Cohen's solution for Promise.all
+// {force:true} if updated schema
 .then(function () {
     return models.Page.sync({})
 })
