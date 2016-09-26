@@ -12,8 +12,13 @@ var router = express.Router();
 
 router.get('/', function(req, res, next){
   // get all wiki pages
-
-})
+  Page.findAll({
+    attributes: ['title','urlTitle']
+  })
+  .then(function(arr) {
+    res.render('index', {pages: arr});
+  })
+});
 
 router.post('/', bodyParser(), function(req, res, next){
   // submit new page to db

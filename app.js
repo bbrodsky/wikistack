@@ -8,7 +8,7 @@ var models = require('./models');
 var wikiRouter = require('./routes/wiki');
 
 
-// router.use(express.static(__dirname + 'public'));
+app.use(express.static('./public'));
 app.use('/wiki', wikiRouter);
 
 // point nunjucks to the directory containing templates and turn off caching; configure returns an Environment
